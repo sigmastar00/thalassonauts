@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 160, 38.9375 )
+
+[node name="Main" type="Node"]
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="TestLevel" type="Node2D" parent="World"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World/TestLevel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TestLevel/StaticBody2D"]
+position = Vector2( 160, 145.062 )
+shape = SubResource( 1 )
