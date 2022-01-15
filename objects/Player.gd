@@ -1,14 +1,14 @@
 extends KinematicBody2D
 
-# == signals ==
+# == SIGNALS ==
 signal death(player)
 
-# == enums ==
+# == ENUMS ==
 
-# == constants ==
+# == CONSTANTS ==
 const MAX_OXYGEN := 100.0
 
-# == exported variables ==
+# == EXPORTED VARIABLES ==
 export var max_speed: float
 export var move_acceleration: float
 
@@ -22,23 +22,23 @@ export var boost_strength: float
 export var boost_oxygen_drain: float
 export var max_boost_speed: float
 
-# == public variables ==
+# == PUBLIC VARIABLES ==
 var velocity := Vector2.ZERO
 var acceleration := Vector2.ZERO
 var oxygen := MAX_OXYGEN
 
-# == private variables ==
+# == PRIVATE VARIABLES ==
 var _jump_frames := 0
 var _boosting := false
 var _jump_buffer := [false, false, false, false, false, false]
 var _current_filler: Area2D = null
 var _dead = false
 
-# == onready variables ==
+# == ONREADY VARIABLES ==
 onready var _hose_line := $Line2D as Line2D
 onready var _boost_particles := $CPUParticles2D as CPUParticles2D
 
-# == built-in virtual methods ==
+# == BUILT-IN VIRTUAL METHODS ==
 func _init() -> void:
 	pass
 
@@ -98,7 +98,7 @@ func _process(_delta: float) -> void:
 	_boost_particles.emitting = _boosting
 
 
-# == public methods ==
+# == PUBLIC METHODS ==
 func die() -> void:
 	_dead = true
 	emit_signal("death", self)
@@ -114,7 +114,7 @@ func oxygen_left(filler: Area2D) -> void:
 		_hose_line.clear_points()
 
 
-# == private methods ==
+# == PRIVATE METHODS ==
 func _shift_jump_buffer() -> void:
 	var i := _jump_buffer.size() - 1
 	while true:

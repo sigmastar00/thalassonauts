@@ -1,4 +1,4 @@
-extends ProgressBar
+extends TextureProgress
 
 export var player: NodePath
 

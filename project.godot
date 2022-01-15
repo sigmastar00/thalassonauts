@@ -53,7 +53,7 @@ window/size/height=180
 window/size/test_width=960
 window/size/test_height=540
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
+window/stretch/aspect="keep"
 window/size/always_on_top.debug=true
 
 [editor_plugins]

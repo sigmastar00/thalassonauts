@@ -3,8 +3,8 @@
 [ext_resource path="res://objects/oxygen_filler.aseprite" type="SpriteFrames" id=1]
 [ext_resource path="res://objects/OxygenFiller.gd" type="Script" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 50.0
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 40, 40 )
 
 [node name="OxygenFiller" type="Area2D" groups=["oxygen_fillers"]]
 collision_layer = 0
@@ -12,7 +12,7 @@ monitorable = false
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -8 )
+position = Vector2( 0, -9 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
