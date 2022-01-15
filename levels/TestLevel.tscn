@@ -1,22 +1,21 @@
 [gd_scene load_steps=4 format=2]
 
+[ext_resource path="res://levels/level_tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://objects/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/OxygenFiller.tscn" type="PackedScene" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 320, 38.9375 )
-
 [node name="TestLevel" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 320, 320 )
-shape = SubResource( 1 )
-
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 248, 256 )
+position = Vector2( 40, 120 )
 
 [node name="OxygenFiller" parent="." instance=ExtResource( 3 )]
-position = Vector2( 80, 200 )
+position = Vector2( 24, 128 )
+
+[node name="GeometryTiles" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 589823, 0, 1, 524288, 0, 2, 524289, 0, 2, 524290, 0, 2, 524291, 0, 2, 524292, 0, 2, 524293, 0, 2, 524294, 0, 2, 524295, 0, 2, 524296, 0, 2, 524297, 0, 2, 524298, 0, 2, 524299, 0, 2, 524300, 0, 2, 524301, 0, 2, 524302, 0, 2, 524303, 0, 2, 524304, 0, 2, 524305, 0, 2, 524306, 0, 2, 524307, 0, 3, 655359, 0, 65537, 589824, 0, 65538, 589825, 0, 65538, 589826, 0, 65538, 589827, 0, 65538, 589828, 0, 65538, 589829, 0, 65538, 589830, 0, 65538, 589831, 0, 65538, 589832, 0, 65538, 589833, 0, 65538, 589834, 0, 65538, 589835, 0, 65538, 589836, 0, 65538, 589837, 0, 65538, 589838, 0, 65538, 589839, 0, 65538, 589840, 0, 65538, 589841, 0, 65538, 589842, 0, 65538, 589843, 0, 65539, 720895, 0, 65537, 655360, 0, 65538, 655361, 0, 65538, 655362, 0, 65538, 655363, 0, 65538, 655364, 0, 65538, 655365, 0, 65538, 655366, 0, 65538, 655367, 0, 65538, 655368, 0, 65538, 655369, 0, 65538, 655370, 0, 65538, 655371, 0, 65538, 655372, 0, 65538, 655373, 0, 65538, 655374, 0, 65538, 655375, 0, 65538, 655376, 0, 65538, 655377, 0, 65538, 655378, 0, 65538, 655379, 0, 65539, 786431, 0, 65537, 720896, 0, 65538, 720897, 0, 65538, 720898, 0, 65538, 720899, 0, 65538, 720900, 0, 65538, 720901, 0, 65538, 720902, 0, 65538, 720903, 0, 65538, 720904, 0, 65538, 720905, 0, 65538, 720906, 0, 65538, 720907, 0, 65538, 720908, 0, 65538, 720909, 0, 65538, 720910, 0, 65538, 720911, 0, 65538, 720912, 0, 65538, 720913, 0, 65538, 720914, 0, 65538, 720915, 0, 65539 )

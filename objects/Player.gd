@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 # == signals ==
+signal death(player)
 
 # == enums ==
 
@@ -31,6 +32,7 @@ var _jump_frames := 0
 var _boosting := false
 var _jump_buffer := [false, false, false, false, false, false]
 var _current_filler: Area2D = null
+var _dead = false
 
 # == onready variables ==
 onready var _hose_line := $Line2D as Line2D
@@ -46,9 +48,15 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if _dead:
+		return
+
+	if oxygen <= 0:
+		die()
+
 	if Input.is_action_just_pressed("jump"):
 		_jump_buffer[0] = true
-		
+
 	_boosting = false
 	acceleration.y = gravity_acceleration
 
@@ -58,7 +66,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x += move_acceleration * move_dir * delta
 		velocity.x = clamp(velocity.x, -max_speed, max_speed)
-		
+
 	if is_on_floor():
 		_jump_frames = 0
 		if _jump_buffer.has(true):
@@ -67,7 +75,7 @@ func _physics_process(delta: float) -> void:
 		_jump_frames += 1
 		if Input.is_action_pressed("jump") and _jump_frames > 5:
 			_boosting = true
-			
+
 	if _boosting:
 		acceleration.y = gravity_acceleration - boost_strength
 		oxygen -= boost_oxygen_drain * delta
@@ -86,11 +94,16 @@ func _process(_delta: float) -> void:
 	if _current_filler != null:
 		var offset := _current_filler.position - position
 		_hose_line.points = [Vector2.ZERO, offset]
-		
+
 	_boost_particles.emitting = _boosting
 
 
 # == public methods ==
+func die() -> void:
+	_dead = true
+	emit_signal("death", self)
+
+
 func oxygen_entered(filler: Area2D) -> void:
 	_current_filler = filler
 
@@ -115,3 +128,7 @@ func _shift_jump_buffer() -> void:
 # == SIGNAL HANDLERS ==
 func _on_OxygenTick_timeout() -> void:
 	oxygen -= 1
+
+
+func _on_HazardDetect_body_entered(body: Node) -> void:
+	die()

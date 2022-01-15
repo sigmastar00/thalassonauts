@@ -48,8 +48,8 @@ ggsManager="*res://addons/GGS/src/ggs_manager.gd"
 
 [display]
 
-window/size/width=640
-window/size/height=360
+window/size/width=320
+window/size/height=180
 window/size/test_width=960
 window/size/test_height=540
 window/stretch/mode="viewport"
@@ -98,6 +98,7 @@ jump={
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Level Geometry"
 2d_physics/layer_3="Decoration"
+2d_physics/layer_4="Hazard"
 
 [physics]
 
@@ -110,4 +111,5 @@ quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 batching/precision/uv_contract=true
+environment/default_clear_color=Color( 0.0313726, 0.0784314, 0.117647, 1 )
 environment/default_environment="res://default_env.tres"
