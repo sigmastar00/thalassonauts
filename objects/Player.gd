@@ -130,5 +130,5 @@ func _on_OxygenTick_timeout() -> void:
 	oxygen -= 1
 
 
-func _on_HazardDetect_body_entered(body: Node) -> void:
+func _on_HazardDetect_body_entered(_body: Node) -> void:
 	die()
