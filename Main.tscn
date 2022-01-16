@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://levels/TestLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ui/OxygenMeter.gd" type="Script" id=2]
 [ext_resource path="res://fx/oxygen_bg.png" type="Texture" id=3]
 [ext_resource path="res://fx/oxygen_overlay.png" type="Texture" id=4]
 [ext_resource path="res://fx/oxygen_fg.png" type="Texture" id=5]
+[ext_resource path="res://fx/bubble_particle.png" type="Texture" id=6]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.120805, 0.845638, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
 
 [node name="Main" type="Node"]
 
@@ -30,6 +35,7 @@ texture_over = ExtResource( 4 )
 texture_progress = ExtResource( 5 )
 script = ExtResource( 2 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 player = NodePath("../../../World/TestLevel/Player")
@@ -38,5 +44,19 @@ player = NodePath("../../../World/TestLevel/Player")
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="World"]
+position = Vector2( 200, 200 )
+amount = 16
+texture = ExtResource( 6 )
+emission_shape = 2
+emission_rect_extents = Vector2( 300, 300 )
+direction = Vector2( 0, -1 )
+spread = 0.0
+gravity = Vector2( 0, -98 )
+initial_velocity = 21.5
+initial_velocity_random = 0.19
+color = Color( 0.0588235, 0.164706, 0.247059, 1 )
+color_ramp = SubResource( 1 )
 
 [node name="TestLevel" parent="World" instance=ExtResource( 1 )]

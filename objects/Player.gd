@@ -36,8 +36,8 @@ var _current_filler: Area2D = null
 var _dead = false
 
 # == ONREADY VARIABLES ==
-onready var _hose_line := $Line2D as Line2D
-onready var _boost_particles := $CPUParticles2D as CPUParticles2D
+onready var _hose_line := $HoseLine as Line2D
+onready var _boost_particles := $BoostParticles as CPUParticles2D
 
 # == BUILT-IN VIRTUAL METHODS ==
 func _init() -> void:
