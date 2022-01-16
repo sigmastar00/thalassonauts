@@ -107,6 +107,7 @@ func die() -> void:
 	
 func respawn(respawn_position: Vector2) -> void:
 	position = respawn_position
+	oxygen = MAX_OXYGEN
 	_dead = false
 
 
