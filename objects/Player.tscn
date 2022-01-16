@@ -21,8 +21,9 @@ gravity_acceleration = 250.0
 jump_velocity = 100.0
 terminal_velocity = 250.0
 oxygen_fill_rate = 100.0
+oxygen_tick_drain = 5.0
 boost_strength = 500.0
-boost_oxygen_drain = 10.0
+boost_oxygen_drain = 20.0
 max_boost_speed = 100.0
 
 [node name="Line2D" type="Line2D" parent="."]

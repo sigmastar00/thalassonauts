@@ -17,6 +17,7 @@ export var jump_velocity: float
 export var terminal_velocity: float
 
 export var oxygen_fill_rate: float
+export var oxygen_tick_drain: float
 
 export var boost_strength: float
 export var boost_oxygen_drain: float
@@ -102,6 +103,11 @@ func _process(_delta: float) -> void:
 func die() -> void:
 	_dead = true
 	emit_signal("death", self)
+	
+	
+func respawn(respawn_position: Vector2) -> void:
+	position = respawn_position
+	_dead = false
 
 
 func oxygen_entered(filler: Area2D) -> void:
@@ -127,7 +133,8 @@ func _shift_jump_buffer() -> void:
 
 # == SIGNAL HANDLERS ==
 func _on_OxygenTick_timeout() -> void:
-	oxygen -= 1
+	if _current_filler == null:
+		oxygen -= oxygen_tick_drain
 
 
 func _on_HazardDetect_body_entered(_body: Node) -> void:
