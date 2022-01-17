@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 ## Class documentation.
 
 
@@ -9,12 +9,10 @@ extends Node2D
 # == CONSTANTS ==
 
 # == EXPORTED VARIABLES ==
-export var respawn_point: NodePath 
 
 # == PUBLIC VARIABLES ==
 
 # == PRIVATE VARIABLES ==
-var _respawn_point: Node2D
 
 # == ONREADY VARIABLES ==
 
@@ -25,15 +23,15 @@ func _init()  -> void:
 
 
 func _ready()  -> void:
-	_respawn_point = get_node(respawn_point) as Node2D
-	assert(_respawn_point != null)
+	pass
 
 
 # == PUBLIC METHODS ==
+func get_player() -> KinematicBody2D:
+	return get_tree().get_nodes_in_group("player")[0]
 
 # == PRIVAE METHODS ==
 
 # == SIGNAL HANDLERS ==
-func _on_Player_death(player: KinematicBody2D) -> void:
-	player.respawn(_respawn_point.position)
-	
+
+

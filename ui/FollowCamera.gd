@@ -15,6 +15,7 @@ export var target: NodePath
 
 # == PRIVATE VARIABLES ==
 var _target: Node2D
+var _reset := false
 
 # == ONREADY VARIABLES ==
 
@@ -27,7 +28,9 @@ func _init()  -> void:
 func _ready()  -> void:
 	_target = get_node(target) as Node2D
 	assert(_target)
-	
+	position = _target.position
+	align()
+	reset_smoothing()
 	
 func _process(_delta: float) -> void:
 	position = _target.position

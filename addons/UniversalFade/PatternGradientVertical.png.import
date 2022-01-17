@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hazard_tiles.png-99e87f9d3a064ee616152872b24f4f42.stex"
+path="res://.import/PatternGradientVertical.png-48c75255566fb1b64a5ec744cddc917c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/hazard_tiles.png"
-dest_files=[ "res://.import/hazard_tiles.png-99e87f9d3a064ee616152872b24f4f42.stex" ]
+source_file="res://addons/UniversalFade/PatternGradientVertical.png"
+dest_files=[ "res://.import/PatternGradientVertical.png-48c75255566fb1b64a5ec744cddc917c.stex" ]
 
 [params]
 

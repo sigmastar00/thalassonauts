@@ -45,6 +45,8 @@ config/icon="res://icon.png"
 [autoload]
 
 ggsManager="*res://addons/GGS/src/ggs_manager.gd"
+Fade="*res://addons/UniversalFade/Fade.gd"
+Utils="*res://Utils.gd"
 
 [display]
 

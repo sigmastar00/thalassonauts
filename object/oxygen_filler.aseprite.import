@@ -2,12 +2,12 @@
 
 importer="aseprite.wizard.plugin"
 type="SpriteFrames"
-path="res://.import/hazard_tiles.aseprite-11d4d79e07bfc9ba20e22c06740cc50b.res"
+path="res://.import/oxygen_filler.aseprite-b8dbd6d367b053c5fd45b7400adb13c1.res"
 
 [deps]
 
-source_file="res://levels/hazard_tiles.aseprite"
-dest_files=[ "res://.import/hazard_tiles.aseprite-11d4d79e07bfc9ba20e22c06740cc50b.res" ]
+source_file="res://object/oxygen_filler.aseprite"
+dest_files=[ "res://.import/oxygen_filler.aseprite-b8dbd6d367b053c5fd45b7400adb13c1.res" ]
 
 [params]
 

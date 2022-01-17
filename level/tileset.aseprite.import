@@ -2,12 +2,12 @@
 
 importer="aseprite.wizard.plugin"
 type="SpriteFrames"
-path="res://.import/player.aseprite-0c3170280d4bb1b43705e5c7565f573c.res"
+path="res://.import/tileset.aseprite-1f27001426cd2a6e76e2486371e6cce8.res"
 
 [deps]
 
-source_file="res://objects/player.aseprite"
-dest_files=[ "res://.import/player.aseprite-0c3170280d4bb1b43705e5c7565f573c.res" ]
+source_file="res://level/tileset.aseprite"
+dest_files=[ "res://.import/tileset.aseprite-1f27001426cd2a6e76e2486371e6cce8.res" ]
 
 [params]
 
