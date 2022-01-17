@@ -26,6 +26,8 @@ margin_top = -100.0
 margin_right = -15.0
 margin_bottom = -80.0
 grow_horizontal = 0
+focus_neighbour_top = NodePath("../QuitButton")
+focus_neighbour_bottom = NodePath("../OptionsButton")
 text = "Start"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -41,6 +43,8 @@ margin_top = -68.0
 margin_right = -15.0
 margin_bottom = -48.0
 grow_horizontal = 0
+focus_neighbour_top = NodePath("../StartButton")
+focus_neighbour_bottom = NodePath("../QuitButton")
 text = "Options"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -55,6 +59,8 @@ margin_left = -56.0
 margin_top = -36.0
 margin_right = -15.0
 margin_bottom = -16.0
+focus_neighbour_top = NodePath("../OptionsButton")
+focus_neighbour_bottom = NodePath("../StartButton")
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false

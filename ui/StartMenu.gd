@@ -23,7 +23,7 @@ func _init()  -> void:
 
 
 func _ready()  -> void:
-	pass
+	$StartButton.grab_focus()
 
 
 # == PUBLIC METHODS ==
