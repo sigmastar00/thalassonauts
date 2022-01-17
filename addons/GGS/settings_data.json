@@ -16,12 +16,12 @@
 	"1": {
 		"name": "window_scale",
 		"default": {
-			"value": 1,
-			"min_scale": 2
+			"value": 2,
+			"min_scale": 1
 		},
 		"current": {
-			"value": 1,
-			"min_scale": 2
+			"value": 2,
+			"min_scale": 1
 		},
 		"logic": "res://addons/GGS/logic/window_scale.gd"
 	},
@@ -88,5 +88,46 @@
 			"action_name": "jump"
 		},
 		"logic": "res://addons/GGS/logic/keybind_kb.gd"
+	},
+	"7": {
+		"name": "gp_bind_move_left",
+		"default": {
+			"value": -1,
+			"action_name": "move_left",
+			"axis": 0
+		},
+		"current": {
+			"value": -0.756832,
+			"action_name": "move_left",
+			"axis": 0
+		},
+		"logic": "res://addons/GGS/logic/keybind_gp.gd"
+	},
+	"8": {
+		"name": "gp_bind_move_right",
+		"default": {
+			"value": 1,
+			"action_name": "move_right",
+			"axis": 0
+		},
+		"current": {
+			"value": 0.573266,
+			"action_name": "move_right",
+			"axis": 0
+		},
+		"logic": "res://addons/GGS/logic/keybind_gp.gd"
+	},
+	"9": {
+		"name": "gp_bind_jump",
+		"default": {
+			"value": 0,
+			"action_name": "jump",
+			"axis": -1
+		},
+		"current": {
+			"value": 0,
+			"action_name": "jump"
+		},
+		"logic": "res://addons/GGS/logic/keybind_gp.gd"
 	}
 }

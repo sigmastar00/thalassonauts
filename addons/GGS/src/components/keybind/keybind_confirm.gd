@@ -33,8 +33,11 @@ func _input(event: InputEvent) -> void:
 	if (event is InputEventKey or event is InputEventMouseButton or event is InputEventJoypadButton) \
 		and event.pressed == false:
 			return
+			
+	if event is InputEventJoypadMotion:
+		print(event.as_text())
 	# Only continue if the axis is fully pressed
-	if event is InputEventJoypadMotion and abs(event.axis_value) < 1:
+	if event is InputEventJoypadMotion and abs(event.axis_value) < 0.55:
 		return
 	
 	# Check if the key is already assigned. Ignores UI actions.

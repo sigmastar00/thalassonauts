@@ -6,6 +6,7 @@
 [node name="uiAddKey" type="Button"]
 margin_right = 28.0
 margin_bottom = 22.0
+hint_tooltip = "Add Key"
 size_flags_horizontal = 0
 icon = ExtResource( 2 )
 script = ExtResource( 1 )

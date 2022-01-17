@@ -8,6 +8,7 @@ margin_left = 1.24304
 margin_top = 2.24492
 margin_right = 157.243
 margin_bottom = 44.2449
+focus_mode = 2
 popup_exclusive = true
 script = ExtResource( 1 )
 __meta__ = {
