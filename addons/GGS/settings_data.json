@@ -56,11 +56,11 @@
 	"4": {
 		"name": "kb_bind_move_left",
 		"default": {
-			"value": 16777231,
+			"value": 65,
 			"action_name": "move_left"
 		},
 		"current": {
-			"value": 16777231,
+			"value": 65,
 			"action_name": "move_left"
 		},
 		"logic": "res://addons/GGS/logic/keybind_kb.gd"
@@ -68,11 +68,11 @@
 	"5": {
 		"name": "kb_bind_move_right",
 		"default": {
-			"value": 16777233,
+			"value": 68,
 			"action_name": "move_right"
 		},
 		"current": {
-			"value": 16777233,
+			"value": 68,
 			"action_name": "move_right"
 		},
 		"logic": "res://addons/GGS/logic/keybind_kb.gd"
@@ -80,11 +80,11 @@
 	"6": {
 		"name": "kb_bind_jump",
 		"default": {
-			"value": 67,
+			"value": 32,
 			"action_name": "jump"
 		},
 		"current": {
-			"value": 67,
+			"value": 32,
 			"action_name": "jump"
 		},
 		"logic": "res://addons/GGS/logic/keybind_kb.gd"
