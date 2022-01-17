@@ -23,11 +23,10 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -56.0
-margin_top = -100.0
+margin_top = -71.0
 margin_right = -15.0
-margin_bottom = -80.0
+margin_bottom = -51.0
 grow_horizontal = 0
-focus_neighbour_top = NodePath("../QuitButton")
 focus_neighbour_bottom = NodePath("../OptionsButton")
 text = "Start"
 __meta__ = {
@@ -40,29 +39,12 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -80.0
-margin_top = -68.0
-margin_right = -15.0
-margin_bottom = -48.0
-grow_horizontal = 0
-focus_neighbour_top = NodePath("../StartButton")
-focus_neighbour_bottom = NodePath("../QuitButton")
-text = "Options"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="QuitButton" type="Button" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -56.0
 margin_top = -36.0
 margin_right = -15.0
 margin_bottom = -16.0
-focus_neighbour_top = NodePath("../OptionsButton")
-focus_neighbour_bottom = NodePath("../StartButton")
-text = "Quit"
+grow_horizontal = 0
+focus_neighbour_top = NodePath("../StartButton")
+text = "Options"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -76,8 +58,6 @@ custom_fonts/font = SubResource( 1 )
 text = "GWJ #41"
 
 [node name="OptionsMenu" parent="." instance=ExtResource( 4 )]
-visible = false
 
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_OptionsButton_pressed"]
-[connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
