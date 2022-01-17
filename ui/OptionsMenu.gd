@@ -1,4 +1,4 @@
-extends Control
+extends PopupPanel
 ## Class documentation.
 
 
@@ -23,7 +23,7 @@ func _init()  -> void:
 
 
 func _ready()  -> void:
-	$StartButton.grab_focus()
+	pass
 
 
 # == PUBLIC METHODS ==
@@ -31,15 +31,5 @@ func _ready()  -> void:
 # == PRIVAE METHODS ==
 
 # == SIGNAL HANDLERS ==
-func _on_StartButton_pressed() -> void:
-	yield(Fade.fade_out(0.5), "finished")
-	get_tree().change_scene("res://Main.tscn")
-	Fade.fade_in(0.5)
-
-
-func _on_QuitButton_pressed() -> void:
-	get_tree().quit()
-
-
-func _on_OptionsButton_pressed() -> void:
-	$OptionsMenu.popup()
+func _on_AcceptButton_pressed() -> void:
+	hide()

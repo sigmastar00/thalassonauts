@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ui/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://ui/m6x11.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://ui/StartMenu.gd" type="Script" id=3]
+[ext_resource path="res://ui/OptionsMenu.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -74,5 +75,9 @@ margin_bottom = 38.0
 custom_fonts/font = SubResource( 1 )
 text = "GWJ #41"
 
+[node name="OptionsMenu" parent="." instance=ExtResource( 4 )]
+visible = false
+
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
