@@ -24,12 +24,12 @@
 [ext_resource path="res://addons/GGS/assets/glyph/gamepad/y.png" type="Texture" id=23]
 [ext_resource path="res://addons/GGS/assets/glyph/gamepad/transparent.png" type="Texture" id=24]
 
-[sub_resource type="InputEventAction" id=1]
-action = "pause"
+[sub_resource type="InputEventAction" id=6]
+action = "leave_options"
 pressed = true
 
-[sub_resource type="ShortCut" id=2]
-shortcut = SubResource( 1 )
+[sub_resource type="ShortCut" id=7]
+shortcut = SubResource( 6 )
 
 [sub_resource type="AnimatedTexture" id=3]
 resource_local_to_scene = true
@@ -191,6 +191,7 @@ frame_31/texture = ExtResource( 24 )
 frame_31/delay_sec = 0.0
 
 [node name="OptionsMenu" type="PopupPanel"]
+visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 3 )
@@ -312,7 +313,7 @@ margin_right = 84.0
 margin_bottom = 164.0
 size_flags_horizontal = 4
 size_flags_vertical = 10
-shortcut = SubResource( 2 )
+shortcut = SubResource( 7 )
 text = "Accept"
 
 [node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer"]
