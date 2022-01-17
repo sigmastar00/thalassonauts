@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/oxygen_overlay.png-cdbad83d6af189b478248d36b64ec93e.stex"
+path="res://.import/oxygen_overlay.png-07e668e0052742421b7e1b3b336532d4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://fx/oxygen_overlay.png"
-dest_files=[ "res://.import/oxygen_overlay.png-cdbad83d6af189b478248d36b64ec93e.stex" ]
+source_file="res://ui/oxygen_overlay.png"
+dest_files=[ "res://.import/oxygen_overlay.png-07e668e0052742421b7e1b3b336532d4.stex" ]
 
 [params]
 

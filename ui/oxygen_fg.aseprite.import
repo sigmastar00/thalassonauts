@@ -2,12 +2,12 @@
 
 importer="aseprite.wizard.plugin"
 type="SpriteFrames"
-path="res://.import/oxygen_bg.aseprite-5c38465422a56cdaaafeb2a5542f160c.res"
+path="res://.import/oxygen_fg.aseprite-e12abe7f0767b77ba8e725331057fcc0.res"
 
 [deps]
 
-source_file="res://fx/oxygen_bg.aseprite"
-dest_files=[ "res://.import/oxygen_bg.aseprite-5c38465422a56cdaaafeb2a5542f160c.res" ]
+source_file="res://ui/oxygen_fg.aseprite"
+dest_files=[ "res://.import/oxygen_fg.aseprite-e12abe7f0767b77ba8e725331057fcc0.res" ]
 
 [params]
 
