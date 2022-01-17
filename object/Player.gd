@@ -65,7 +65,7 @@ func _physics_process(delta: float) -> void:
 	if move_dir == 0:
 		velocity.x = move_toward(velocity.x, 0, move_acceleration * delta)
 	else:
-		velocity.x += move_acceleration * move_dir * delta
+		velocity.x += move_acceleration * sign(move_dir) * delta
 		velocity.x = clamp(velocity.x, -max_speed, max_speed)
 
 	if is_on_floor():
