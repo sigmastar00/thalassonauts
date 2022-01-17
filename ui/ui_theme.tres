@@ -1,11 +1,21 @@
-[gd_resource type="Theme" load_steps=8 format=2]
+[gd_resource type="Theme" load_steps=24 format=2]
 
 [ext_resource path="res://ui/m5x7.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://ui/toggle_off.png" type="Texture" id=2]
+[ext_resource path="res://ui/toggle_on.png" type="Texture" id=3]
 
 [sub_resource type="StyleBoxFlat" id=2]
+content_margin_left = 4.0
+content_margin_right = 3.0
+content_margin_top = 0.0
+content_margin_bottom = 2.0
 bg_color = Color( 0.12549, 0.223529, 0.309804, 1 )
 
 [sub_resource type="StyleBoxFlat" id=6]
+content_margin_left = 4.0
+content_margin_right = 3.0
+content_margin_top = 0.0
+content_margin_bottom = 2.0
 draw_center = false
 border_width_left = 1
 border_width_top = 1
@@ -14,17 +24,114 @@ border_width_bottom = 1
 border_color = Color( 0.964706, 0.839216, 0.741176, 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 4.0
+content_margin_right = 3.0
+content_margin_top = 0.0
+content_margin_bottom = 2.0
 bg_color = Color( 0.505882, 0.384314, 0.443137, 1 )
 
 [sub_resource type="StyleBoxFlat" id=4]
+content_margin_left = 4.0
+content_margin_right = 3.0
+content_margin_top = 0.0
+content_margin_bottom = 2.0
 bg_color = Color( 0.305882, 0.286275, 0.372549, 1 )
 
 [sub_resource type="StyleBoxFlat" id=5]
+content_margin_left = 4.0
+content_margin_right = 3.0
+content_margin_top = 0.0
+content_margin_bottom = 2.0
 bg_color = Color( 0.6, 0.458824, 0.466667, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=7]
+content_margin_left = 3.0
+
+[sub_resource type="StyleBoxFlat" id=13]
+draw_center = false
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
+border_color = Color( 0.964706, 0.839216, 0.741176, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=10]
+content_margin_left = 3.0
+
+[sub_resource type="StyleBoxEmpty" id=11]
+content_margin_left = 3.0
+
+[sub_resource type="StyleBoxEmpty" id=9]
+content_margin_left = 3.0
+
+[sub_resource type="StyleBoxEmpty" id=12]
+content_margin_left = 3.0
+
+[sub_resource type="StyleBoxFlat" id=14]
+draw_center = false
+border_width_top = 1
+border_color = Color( 0.964706, 0.839216, 0.741176, 1 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.0313726, 0.0784314, 0.117647, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.12549, 0.223529, 0.309804, 1 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+content_margin_left = 3.0
+content_margin_right = 3.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.0313726, 0.0784314, 0.117647, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.12549, 0.223529, 0.309804, 1 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+content_margin_left = 3.0
+content_margin_right = 3.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.0313726, 0.0784314, 0.117647, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.12549, 0.223529, 0.309804, 1 )
+
+[sub_resource type="StyleBoxFlat" id=19]
+content_margin_left = 3.0
+bg_color = Color( 0.0313726, 0.0784314, 0.117647, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_color = Color( 0.12549, 0.223529, 0.309804, 1 )
+
+[sub_resource type="StyleBoxFlat" id=20]
+content_margin_left = 3.0
+bg_color = Color( 0.0313726, 0.0784314, 0.117647, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_color = Color( 0.12549, 0.223529, 0.309804, 1 )
+
+[sub_resource type="StyleBoxFlat" id=21]
+content_margin_left = 3.0
+bg_color = Color( 0.12549, 0.223529, 0.309804, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_color = Color( 0.12549, 0.223529, 0.309804, 1 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+draw_center = false
+border_width_left = 1
+border_color = Color( 0.964706, 0.839216, 0.741176, 1 )
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -41,3 +148,20 @@ Button/styles/focus = SubResource( 6 )
 Button/styles/hover = SubResource( 3 )
 Button/styles/normal = SubResource( 4 )
 Button/styles/pressed = SubResource( 5 )
+CheckButton/icons/off = ExtResource( 2 )
+CheckButton/icons/on = ExtResource( 3 )
+CheckButton/styles/disabled = SubResource( 7 )
+CheckButton/styles/focus = SubResource( 13 )
+CheckButton/styles/hover = SubResource( 10 )
+CheckButton/styles/hover_pressed = SubResource( 11 )
+CheckButton/styles/normal = SubResource( 9 )
+CheckButton/styles/pressed = SubResource( 12 )
+HSeparator/styles/separator = SubResource( 14 )
+Label/colors/font_color = Color( 0.964706, 0.839216, 0.741176, 1 )
+Panel/styles/panel = SubResource( 15 )
+PanelContainer/styles/panel = SubResource( 16 )
+TabContainer/styles/panel = SubResource( 18 )
+TabContainer/styles/tab_bg = SubResource( 19 )
+TabContainer/styles/tab_disabled = SubResource( 20 )
+TabContainer/styles/tab_fg = SubResource( 21 )
+VSeparator/styles/separator = SubResource( 17 )
