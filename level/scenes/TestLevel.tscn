@@ -67,7 +67,7 @@ position = Vector2( 64, 312 )
 shape = SubResource( 1 )
 
 [node name="OxygenFiller2" parent="Transition" instance=ExtResource( 3 )]
-position = Vector2( 224, 288 )
+position = Vector2( 224, 256 )
 
 [connection signal="death" from="Player" to="." method="_on_Player_death"]
 [connection signal="body_entered" from="Transition" to="." method="_on_Transition_body_entered"]
