@@ -18,6 +18,7 @@ pause_mode = 2
 script = ExtResource( 7 )
 level_list = PoolStringArray( "res://level/scenes/Intro.tscn", "res://level/scenes/Level1.tscn", "res://level/scenes/Level2.tscn", "res://level/scenes/Level3.tscn" )
 fade_time = 0.3
+fade_color = Color( 0.0313726, 0.0784314, 0.117647, 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2

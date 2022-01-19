@@ -51,6 +51,7 @@ func _run_in_main() -> void:
 # == SIGNAL HANDLERS ==
 func _on_Player_death(player: KinematicBody2D) -> void:
 	player.respawn(_respawn_point.position)
+	get_tree().call_group("respawnable_objects", "respawn")
 
 
 func _on_Transition_body_entered(body: Node) -> void:
