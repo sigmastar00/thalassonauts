@@ -28,12 +28,25 @@ func _init()  -> void:
 func _ready()  -> void:
 	_respawn_point = get_node(respawn_point) as Node2D
 	assert(_respawn_point != null)
-
+	
+	# run indiviudal levels from the editor in the main scene instead
+	var scene := get_tree().current_scene
+	if scene == self:
+		call_deferred("_run_in_main")
 
 # == PUBLIC METHODS ==
 
 
-# == PRIVAE METHODS ==
+# == PRIVATE METHODS ==
+func _run_in_main() -> void:
+	var main := load("res://Main.tscn").instance() as Node
+	var root := get_tree().root
+	root.add_child(main)
+	get_tree().current_scene = main
+	root.remove_child(self)
+	main.call_deferred("change_level", filename)
+	queue_free()
+	
 
 # == SIGNAL HANDLERS ==
 func _on_Player_death(player: KinematicBody2D) -> void:

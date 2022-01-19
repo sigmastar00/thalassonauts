@@ -40,14 +40,23 @@ func _input(event: InputEvent) -> void:
 
 
 # == PUBLIC METHODS ==
-func change_level(level_index: int = -1) -> void:
+func change_level(next_scene_path: String = "") -> void:
 	get_tree().paused = true
 	
-	if level_index == -1:
-		level_index = min(_current_index + 1, level_list.size() - 1)
-	_current_index = level_index
-	
-	var next_scene_path := level_list[level_index]
+	if next_scene_path == "":
+		var level_index := min(_current_index + 1, level_list.size() - 1)
+		_current_index = level_index
+		next_scene_path = level_list[level_index]
+	else:
+		var i := 0
+		var index := 0
+		for level in level_list:
+			if level == next_scene_path:
+				index = i
+				break
+			i += 1
+		_current_index = index
+		
 	yield(Fade.fade_out(fade_time, fade_color, "GradientVertical", false, true), "finished")
 	var next_level := load(next_scene_path).instance() as Node2D
 	var current_level := _level_holder.get_child(0)
