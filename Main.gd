@@ -77,3 +77,4 @@ func _on_level_complete() -> void:
 
 func _on_OptionsMenu_popup_hide() -> void:
 	get_tree().paused = false
+

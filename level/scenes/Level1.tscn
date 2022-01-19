@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://level/LevelManager.gd" type="Script" id=1]
+[ext_resource path="res://ui/FollowCamera.gd" type="Script" id=2]
+[ext_resource path="res://level/hazard_tileset.tres" type="TileSet" id=3]
+[ext_resource path="res://level/level_tiles.tres" type="TileSet" id=4]
+[ext_resource path="res://object/OxygenFiller.tscn" type="PackedScene" id=5]
+[ext_resource path="res://object/Player.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 64, 10 )
+
+[node name="TestLevel" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+respawn_point = NodePath("RespawnPoint")
+
+[node name="OxygenFiller" parent="." instance=ExtResource( 5 )]
+position = Vector2( 24, 128 )
+
+[node name="Player" parent="." instance=ExtResource( 6 )]
+position = Vector2( 48, 128 )
+
+[node name="GeometryTiles" type="TileMap" parent="."]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+
+[node name="HazardTiles" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 8
+collision_mask = 0
+format = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 48, 128 )
+current = true
+limit_left = -16
+limit_top = 0
+limit_right = 464
+limit_bottom = 304
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
+script = ExtResource( 2 )
+target = NodePath("../Player")
+
+[node name="RespawnPoint" type="Position2D" parent="."]
+position = Vector2( 48, 128 )
+
+[node name="Transition" type="Area2D" parent="."]
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition"]
+position = Vector2( 64, 312 )
+shape = SubResource( 1 )
+
+[connection signal="death" from="Player" to="." method="_on_Player_death"]
+[connection signal="body_entered" from="Transition" to="." method="_on_Transition_body_entered"]

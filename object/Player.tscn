@@ -24,7 +24,7 @@ terminal_velocity = 250.0
 oxygen_fill_rate = 100.0
 oxygen_tick_drain = 1.0
 boost_strength = 500.0
-boost_oxygen_drain = 20.0
+boost_oxygen_drain = 40.0
 max_boost_speed = 100.0
 
 [node name="HoseLine" type="Line2D" parent="."]
@@ -52,7 +52,7 @@ position = Vector2( 0, -5.25 )
 shape = SubResource( 2 )
 
 [node name="OxygenTick" type="Timer" parent="."]
-wait_time = 0.4
+wait_time = 0.2
 autostart = true
 
 [node name="HazardDetect" type="Area2D" parent="."]

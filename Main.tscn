@@ -16,7 +16,7 @@ colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
 [node name="Main" type="Node"]
 pause_mode = 2
 script = ExtResource( 7 )
-level_list = PoolStringArray( "res://level/TestLevel.tscn", "res://level/TestLevel2.tscn" )
+level_list = PoolStringArray( "res://level/scenes/Intro.tscn" )
 fade_time = 0.3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -75,3 +75,4 @@ color_ramp = SubResource( 1 )
 [node name="Intro" parent="World/Level" instance=ExtResource( 1 )]
 
 [connection signal="popup_hide" from="CanvasLayer/GameUI/OptionsMenu" to="." method="_on_OptionsMenu_popup_hide"]
+[connection signal="level_complete" from="World/Level/Intro" to="." method="_on_level_complete"]
