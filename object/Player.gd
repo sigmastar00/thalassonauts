@@ -15,6 +15,7 @@ export var move_acceleration: float
 export var gravity_acceleration: float
 export var jump_velocity: float
 export var terminal_velocity: float
+export var booster_antigrav: float
 
 export var oxygen_fill_rate: float
 export var oxygen_tick_drain: float
@@ -84,6 +85,8 @@ func _physics_process(delta: float) -> void:
 			_boosting = true
 
 	if _boosting:
+		if acceleration.y > 0:
+			acceleration.y = acceleration.y * booster_antigrav
 		acceleration.y = gravity_acceleration - boost_strength
 		oxygen -= boost_oxygen_drain * delta
 
