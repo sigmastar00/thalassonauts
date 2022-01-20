@@ -39,6 +39,10 @@ var _dead = false
 onready var _hose_line := $HoseLine as Line2D
 onready var _boost_particles := $BoostParticles as CPUParticles2D
 
+onready var _hose_connect_sound := $Sfx/HoseConnect as AudioStreamPlayer
+onready var _booster_sound := $Sfx/Boost as AudioStreamPlayer
+onready var _death_sound := $Sfx/Death as AudioStreamPlayer
+
 # == BUILT-IN VIRTUAL METHODS ==
 func _init() -> void:
 	pass
@@ -46,6 +50,8 @@ func _init() -> void:
 
 func _ready() -> void:
 	_hose_line.clear_points()
+	_booster_sound.play()
+	_booster_sound.stream_paused = true
 
 
 func _physics_process(delta: float) -> void:
@@ -97,10 +103,12 @@ func _process(_delta: float) -> void:
 		_hose_line.points = [Vector2.ZERO, offset]
 
 	_boost_particles.emitting = _boosting
+	_booster_sound.stream_paused = !_boosting
 
 
 # == PUBLIC METHODS ==
 func die() -> void:
+	_death_sound.play()
 	_dead = true
 	emit_signal("death", self)
 	
@@ -112,6 +120,7 @@ func respawn(respawn_position: Vector2) -> void:
 
 
 func oxygen_entered(filler: Area2D) -> void:
+	_hose_connect_sound.play()
 	_current_filler = filler
 
 

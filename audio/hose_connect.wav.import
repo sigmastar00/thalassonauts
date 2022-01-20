@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/hose_connect.wav-fcfa5531af0d341703cb42788a3b9fec.sample"
+
+[deps]
+
+source_file="res://audio/hose_connect.wav"
+dest_files=[ "res://.import/hose_connect.wav-fcfa5531af0d341703cb42788a3b9fec.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

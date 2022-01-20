@@ -33,7 +33,7 @@
 			"list_length": 11
 		},
 		"current": {
-			"value": 5,
+			"value": 10,
 			"bus_name": "music",
 			"list_length": 11
 		},
@@ -47,7 +47,7 @@
 			"list_length": 11
 		},
 		"current": {
-			"value": 5,
+			"value": 8,
 			"bus_name": "sfx",
 			"list_length": 11
 		},

@@ -32,9 +32,9 @@ func _ready()  -> void:
 
 # == SIGNAL HANDLERS ==
 func _on_StartButton_pressed() -> void:
-	yield(Fade.fade_out(0.5), "finished")
+	yield(Fade.fade_out(0.5, Utils.PALLETE_0), "finished")
 	get_tree().change_scene("res://Main.tscn")
-	Fade.fade_in(0.5)
+	Fade.fade_in(0.5, Utils.PALLETE_0)
 
 
 func _on_QuitButton_pressed() -> void:

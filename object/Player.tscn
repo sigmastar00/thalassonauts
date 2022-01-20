@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://object/player.aseprite" type="SpriteFrames" id=1]
 [ext_resource path="res://object/Player.gd" type="Script" id=2]
 [ext_resource path="res://fx/bubble_particle_small.png" type="Texture" id=3]
+[ext_resource path="res://audio/hose_connect.wav" type="AudioStream" id=4]
+[ext_resource path="res://audio/bubbles.wav" type="AudioStream" id=5]
+[ext_resource path="res://audio/death.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 3, 4.75 )
@@ -67,6 +70,20 @@ shape = SubResource( 3 )
 [node name="CollisionHead" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -14 )
 shape = SubResource( 4 )
+
+[node name="Sfx" type="Node" parent="."]
+
+[node name="HoseConnect" type="AudioStreamPlayer" parent="Sfx"]
+stream = ExtResource( 4 )
+bus = "sfx"
+
+[node name="Boost" type="AudioStreamPlayer" parent="Sfx"]
+stream = ExtResource( 5 )
+bus = "sfx"
+
+[node name="Death" type="AudioStreamPlayer" parent="Sfx"]
+stream = ExtResource( 6 )
+bus = "sfx"
 
 [connection signal="timeout" from="OxygenTick" to="." method="_on_OxygenTick_timeout"]
 [connection signal="body_entered" from="HazardDetect" to="." method="_on_HazardDetect_body_entered"]
