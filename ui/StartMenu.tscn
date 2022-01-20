@@ -28,6 +28,7 @@ margin_right = -15.0
 margin_bottom = -51.0
 grow_horizontal = 0
 focus_neighbour_bottom = NodePath("../OptionsButton")
+shortcut_in_tooltip = false
 text = "Start"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -44,6 +45,7 @@ margin_right = -15.0
 margin_bottom = -16.0
 grow_horizontal = 0
 focus_neighbour_top = NodePath("../StartButton")
+shortcut_in_tooltip = false
 text = "Options"
 __meta__ = {
 "_edit_use_anchors_": false
