@@ -54,5 +54,5 @@ func _on_Player_death(player: KinematicBody2D) -> void:
 	get_tree().call_group("respawnable_objects", "respawn")
 
 
-func _on_Transition_body_entered(body: Node) -> void:
+func _on_Transition_body_entered(_body: Node) -> void:
 	emit_signal("level_complete")

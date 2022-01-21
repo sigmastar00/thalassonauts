@@ -44,7 +44,7 @@ func change_level(next_scene_path: String = "") -> void:
 	get_tree().paused = true
 	
 	if next_scene_path == "":
-		var level_index := min(_current_index + 1, level_list.size() - 1)
+		var level_index := min(_current_index + 1, level_list.size() - 1) as int
 		_current_index = level_index
 		next_scene_path = level_list[level_index]
 	else:
@@ -63,7 +63,7 @@ func change_level(next_scene_path: String = "") -> void:
 	_level_holder.remove_child(current_level)
 	current_level.queue_free()
 	_level_holder.add_child(next_level)
-	next_level.connect("level_complete", self, "_on_level_complete")
+	assert(next_level.connect("level_complete", self, "_on_level_complete") == OK)
 	get_tree().paused = false
 	Fade.fade_in(fade_time, fade_color, "GradientVertical", true, true)
 	
