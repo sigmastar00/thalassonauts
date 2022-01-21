@@ -16,6 +16,7 @@ export var oxygen_amount: float
 # == PRIVATE VARIABLES ==
 
 # == ONREADY VARIABLES ==
+onready var _pop_sound := $PopSound as AudioStreamPlayer
 
 # == BUILT-IN VIRTUAL METHODS ==
 
@@ -39,3 +40,4 @@ func _on_OxygenBubble_body_entered(body: Node) -> void:
 	body.oxygen = clamp(body.oxygen + oxygen_amount, 0, body.MAX_OXYGEN)
 	visible = false
 	set_deferred("monitoring", false)
+	_pop_sound.play()
