@@ -16,6 +16,7 @@ export var speed: float
 # == PRIVATE VARIABLES ==
 
 # == ONREADY VARIABLES ==
+onready var _initial_rotation = rotation_degrees
 
 # == BUILT-IN VIRTUAL METHODS ==
 
@@ -31,6 +32,8 @@ func _physics_process(delta: float) -> void:
 
 
 # == PUBLIC METHODS ==
+func respawn() -> void:
+	rotation_degrees = _initial_rotation
 
 # == PRIVAE METHODS ==
 
