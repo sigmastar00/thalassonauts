@@ -38,4 +38,4 @@ func respawn() -> void:
 func _on_OxygenBubble_body_entered(body: Node) -> void:
 	body.oxygen = clamp(body.oxygen + oxygen_amount, 0, body.MAX_OXYGEN)
 	visible = false
-	monitoring = false
+	set_deferred("monitoring", false)
