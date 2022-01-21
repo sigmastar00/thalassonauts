@@ -64,7 +64,7 @@ speed = 70.0
 [node name="HazardSpinner2" parent="." groups=["respawnable_objects"] instance=ExtResource( 7 )]
 position = Vector2( 24, 240 )
 rotation = -1.57079
-tile_data = PoolIntArray( -65536, 1610612737, 0, -65535, 1610612737, 0, -65534, 1610612737, 0, 2, 1610612736, 0 )
+tile_data = PoolIntArray( -3, 0, 0, -65536, 1610612737, 0, -65535, 1610612737, 0, -65534, 1610612737, 0, 65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 2, 1610612736, 0 )
 speed = 70.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
