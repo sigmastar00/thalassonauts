@@ -63,7 +63,8 @@ func change_level(next_scene_path: String = "") -> void:
 	_level_holder.remove_child(current_level)
 	current_level.queue_free()
 	_level_holder.add_child(next_level)
-	assert(next_level.connect("level_complete", self, "_on_level_complete") == OK)
+	var result := next_level.connect("level_complete", self, "_on_level_complete")
+	assert(result == OK)
 	get_tree().paused = false
 	Fade.fade_in(fade_time, fade_color, "GradientVertical", true, true)
 	
