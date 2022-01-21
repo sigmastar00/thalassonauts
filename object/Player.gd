@@ -85,13 +85,14 @@ func _physics_process(delta: float) -> void:
 			_boosting = true
 
 	if _boosting:
-		if acceleration.y > 0:
-			acceleration.y = acceleration.y * booster_antigrav
 		acceleration.y = gravity_acceleration - boost_strength
 		oxygen -= boost_oxygen_drain * delta
 
 	velocity.y += acceleration.y * delta
 	velocity.y = clamp(velocity.y, -max_boost_speed, terminal_velocity)
+	if _boosting and velocity.y > 0:
+		velocity.y *= booster_antigrav
+		
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 	if _current_filler != null:
