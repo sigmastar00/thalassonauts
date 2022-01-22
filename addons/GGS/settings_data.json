@@ -97,7 +97,7 @@
 			"axis": 0
 		},
 		"current": {
-			"value": -0.756832,
+			"value": -0.585443,
 			"action_name": "move_left",
 			"axis": 0
 		},
@@ -111,7 +111,7 @@
 			"axis": 0
 		},
 		"current": {
-			"value": 0.573266,
+			"value": 0.674342,
 			"action_name": "move_right",
 			"axis": 0
 		},
