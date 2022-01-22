@@ -21,6 +21,7 @@ var _current_index := 0
 # == ONREADY VARIABLES ==
 onready var _level_holder := $World/Level as Node2D
 onready var _pause_menu := $CanvasLayer/GameUI/OptionsMenu as PopupPanel
+onready var _depth_text := $CanvasLayer/GameUI/DepthText as ColorRect
 
 # == BUILT-IN VIRTUAL METHODS ==
 
@@ -67,7 +68,7 @@ func change_level(next_scene_path: String = "") -> void:
 	assert(result == OK)
 	get_tree().paused = false
 	Fade.fade_in(fade_time, fade_color, "GradientVertical", true, true)
-	
+	_depth_text.show_depth((_current_index + 1) * 10)
 
 # == PRIVAE METHODS ==
 
