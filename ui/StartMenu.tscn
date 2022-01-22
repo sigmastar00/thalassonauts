@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://ui/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://ui/m6x11.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://ui/StartMenu.gd" type="Script" id=3]
 [ext_resource path="res://ui/OptionsMenu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://ui/CreditsScreen.tscn" type="PackedScene" id=5]
+[ext_resource path="res://level/level_tiles.tres" type="TileSet" id=6]
+[ext_resource path="res://object/player.aseprite" type="SpriteFrames" id=7]
+[ext_resource path="res://level/hazard_tileset.tres" type="TileSet" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -83,6 +86,22 @@ __meta__ = {
 [node name="OptionsMenu" parent="." instance=ExtResource( 4 )]
 
 [node name="CreditsScreen" parent="." instance=ExtResource( 5 )]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 655358, 0, 1, 655359, 0, 2, 589824, 0, 2, 589825, 0, 2, 589826, 0, 2, 589827, 0, 2, 589828, 0, 2, 589829, 0, 2, 589830, 0, 3, 720894, 0, 65537, 720895, 0, 65538, 655360, 0, 65538, 655361, 0, 65538, 655362, 0, 65538, 655363, 0, 65538, 655364, 0, 65538, 655365, 0, 65538, 655366, 0, 65538, 655367, 0, 2, 655368, 0, 2, 655369, 0, 2, 655370, 0, 2, 655371, 0, 3, 786430, 0, 65537, 786431, 0, 65538, 720896, 0, 65538, 720897, 0, 65538, 720898, 0, 65538, 720899, 0, 65538, 720900, 0, 65538, 720901, 0, 65538, 720902, 0, 65538, 720903, 0, 65538, 720904, 0, 65538, 720905, 0, 65538, 720906, 0, 65538, 720907, 0, 65539 )
+
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 65, 132 )
+frames = ExtResource( 7 )
 
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_OptionsButton_pressed"]
