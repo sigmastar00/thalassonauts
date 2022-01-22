@@ -191,7 +191,6 @@ frame_31/texture = ExtResource( 24 )
 frame_31/delay_sec = 0.0
 
 [node name="OptionsMenu" type="PopupPanel"]
-visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 3 )

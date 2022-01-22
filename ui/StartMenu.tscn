@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ui/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://ui/m6x11.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://ui/StartMenu.gd" type="Script" id=3]
 [ext_resource path="res://ui/OptionsMenu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ui/CreditsScreen.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -22,10 +23,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -56.0
-margin_top = -71.0
-margin_right = -15.0
-margin_bottom = -51.0
+margin_left = -80.0
+margin_top = -76.0
+margin_right = -16.0
+margin_bottom = -60.0
 grow_horizontal = 0
 focus_neighbour_bottom = NodePath("../OptionsButton")
 shortcut_in_tooltip = false
@@ -40,13 +41,30 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -80.0
-margin_top = -36.0
-margin_right = -15.0
-margin_bottom = -16.0
+margin_top = -52.0
+margin_right = -16.0
+margin_bottom = -36.0
 grow_horizontal = 0
 focus_neighbour_top = NodePath("../StartButton")
+focus_neighbour_bottom = NodePath("../CreditsButton")
 shortcut_in_tooltip = false
 text = "Options"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsButton" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -80.0
+margin_top = -28.0
+margin_right = -16.0
+margin_bottom = -13.0
+focus_neighbour_top = NodePath("../OptionsButton")
+shortcut_in_tooltip = false
+text = "Credits"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -63,7 +81,9 @@ __meta__ = {
 }
 
 [node name="OptionsMenu" parent="." instance=ExtResource( 4 )]
-visible = false
+
+[node name="CreditsScreen" parent="." instance=ExtResource( 5 )]
 
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]

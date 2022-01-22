@@ -37,6 +37,9 @@ func _ready()  -> void:
 # == PUBLIC METHODS ==
 func get_player() -> KinematicBody2D:
 	return get_tree().get_nodes_in_group("player")[0]
+	
+func is_current_scene(scene: Node) -> bool:
+	return scene.get_tree().current_scene == scene
 
 # == PRIVAE METHODS ==
 

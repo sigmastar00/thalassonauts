@@ -43,3 +43,6 @@ func _on_QuitButton_pressed() -> void:
 
 func _on_OptionsButton_pressed() -> void:
 	$OptionsMenu.popup()
+
+func _on_CreditsButton_pressed() -> void:
+	$CreditsScreen.popup()

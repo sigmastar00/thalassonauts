@@ -30,8 +30,7 @@ func _ready()  -> void:
 	assert(_respawn_point != null)
 	
 	# run indiviudal levels from the editor in the main scene instead
-	var scene := get_tree().current_scene
-	if scene == self:
+	if Utils.is_current_scene(self):
 		call_deferred("_run_in_main")
 
 # == PUBLIC METHODS ==
