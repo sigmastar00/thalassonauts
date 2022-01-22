@@ -49,11 +49,11 @@ func _run_in_main() -> void:
 
 # == SIGNAL HANDLERS ==
 func _on_Player_death(player: KinematicBody2D) -> void:
-	yield(Fade.fade_out(0.3), "finished")
+	yield(Fade.fade_out(0.3, Utils.PALLETE_0), "finished")
 	player.respawn(_respawn_point.position)
 	$Camera2D.snap_to_target()
 	get_tree().call_group("respawnable_objects", "respawn")
-	Fade.fade_in(0.3)
+	Fade.fade_in(0.3, Utils.PALLETE_0)
 
 
 func _on_Transition_body_entered(_body: Node) -> void:
