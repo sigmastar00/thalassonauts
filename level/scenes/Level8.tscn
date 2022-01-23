@@ -1,0 +1,199 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://level/level_tiles.tres" type="TileSet" id=1]
+[ext_resource path="res://level/LevelManager.gd" type="Script" id=2]
+[ext_resource path="res://level/hazard_tileset.tres" type="TileSet" id=3]
+[ext_resource path="res://ui/FollowCamera.gd" type="Script" id=4]
+[ext_resource path="res://object/OxygenFiller.tscn" type="PackedScene" id=5]
+[ext_resource path="res://object/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://object/OxygenBubble.tscn" type="PackedScene" id=7]
+[ext_resource path="res://object/HazardMover.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Animation" id=2]
+resource_local_to_scene = true
+resource_name = "Move"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TileMap:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 88, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_local_to_scene = true
+resource_name = "Move"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TileMap:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -80, 0 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("TileMap:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_local_to_scene = true
+resource_name = "Move"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TileMap:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 88, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("TileMap:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 64, 10 )
+
+[node name="TestLevel" type="Node2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+respawn_point = NodePath("RespawnPoint")
+
+[node name="OxygenFiller" parent="." instance=ExtResource( 5 )]
+position = Vector2( 224, 224 )
+
+[node name="OxygenBubble" parent="." instance=ExtResource( 7 )]
+position = Vector2( 236, 104 )
+
+[node name="OxygenBubble2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 237, 24 )
+
+[node name="OxygenBubble3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 184, -48 )
+
+[node name="Player" parent="." instance=ExtResource( 6 )]
+position = Vector2( 248, 224 )
+
+[node name="GeometryTiles" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -393209, 0, 0, -393199, 0, 1, -393198, 0, 2, -393197, 0, 3, -327673, 0, 0, -327663, 0, 65537, -327662, 0, 65538, -327661, 0, 65539, -262144, 0, 0, -262137, 0, 0, -262127, 0, 65537, -262126, 0, 65538, -262125, 0, 65539, -196608, 0, 0, -196601, 0, 0, -196591, 0, 65537, -196590, 0, 65538, -196589, 0, 65539, -131072, 0, 0, -131065, 0, 0, -131062, 0, 1, -131061, 0, 2, -131060, 0, 3, -131055, 0, 65537, -131054, 0, 65538, -131053, 0, 65539, -65536, 0, 0, -65529, 0, 0, -65526, 0, 65537, -65525, 0, 65538, -65524, 0, 65539, -65519, 0, 65537, -65518, 0, 65538, -65517, 0, 65539, 0, 0, 0, 7, 0, 0, 10, 0, 65537, 11, 0, 65538, 12, 0, 65539, 17, 0, 65537, 18, 0, 65538, 19, 0, 65539, 65536, 0, 0, 65543, 0, 0, 65546, 0, 65537, 65547, 0, 65538, 65548, 0, 65539, 65553, 0, 65537, 65554, 0, 65538, 65555, 0, 65539, 131072, 0, 0, 131082, 0, 65537, 131083, 0, 65538, 131084, 0, 65539, 131089, 0, 65537, 131090, 0, 65538, 131091, 0, 65539, 196608, 0, 0, 196618, 0, 65537, 196619, 0, 65538, 196620, 0, 65539, 196625, 0, 65537, 196626, 0, 65538, 196627, 0, 65539, 262144, 0, 0, 262151, 0, 1, 262152, 0, 2, 262153, 0, 2, 262154, 0, 65538, 262155, 0, 65538, 262156, 0, 65539, 262161, 0, 65537, 262162, 0, 65538, 262163, 0, 65539, 327680, 0, 0, 327684, 0, 1, 327685, 0, 2, 327686, 0, 3, 327690, 0, 65537, 327691, 0, 65538, 327692, 0, 65539, 327697, 0, 65537, 327698, 0, 65538, 327699, 0, 65539, 393216, 0, 0, 393226, 0, 65537, 393227, 0, 65538, 393228, 0, 65539, 393233, 0, 65537, 393234, 0, 65538, 393235, 0, 65539, 458752, 0, 0, 458762, 0, 65537, 458763, 0, 65538, 458764, 0, 65539, 458769, 0, 65537, 458770, 0, 65538, 458771, 0, 65539, 524288, 0, 65537, 524289, 0, 2, 524290, 0, 2, 524291, 0, 3, 524298, 0, 65537, 524299, 0, 65538, 524300, 0, 65539, 524305, 0, 65537, 524306, 0, 65538, 524307, 0, 65539, 589824, 0, 0, 589828, 0, 1, 589829, 0, 2, 589830, 0, 3, 589834, 0, 65537, 589835, 0, 65538, 589836, 0, 65539, 589841, 0, 65537, 589842, 0, 65538, 589843, 0, 65539, 655360, 0, 0, 655370, 0, 65537, 655371, 0, 65538, 655372, 0, 65539, 655377, 0, 65537, 655378, 0, 65538, 655379, 0, 65539, 720896, 0, 0, 720906, 0, 65537, 720907, 0, 65538, 720908, 0, 65539, 720913, 0, 65537, 720914, 0, 65538, 720915, 0, 65539, 786432, 0, 0, 786439, 0, 1, 786440, 0, 2, 786441, 0, 2, 786442, 0, 65538, 786443, 0, 65538, 786444, 0, 65539, 786449, 0, 65537, 786450, 0, 65538, 786451, 0, 65539, 851968, 0, 0, 851972, 0, 1, 851973, 0, 2, 851974, 0, 3, 851978, 0, 65537, 851979, 0, 65538, 851980, 0, 65539, 851985, 0, 65537, 851986, 0, 65538, 851987, 0, 65539, 917504, 0, 0, 917514, 0, 65537, 917515, 0, 65538, 917516, 0, 65538, 917517, 0, 2, 917518, 0, 2, 917519, 0, 2, 917520, 0, 2, 917521, 0, 65538, 917522, 0, 65538, 917523, 0, 65539, 983040, 0, 0, 983050, 0, 65537, 983051, 0, 65538, 983052, 0, 65538, 983053, 0, 65538, 983054, 0, 65538, 983055, 0, 65538, 983056, 0, 65538, 983057, 0, 65538, 983058, 0, 65538, 983059, 0, 65539, 1048576, 0, 0, 1048586, 0, 65537, 1048587, 0, 65538, 1048588, 0, 65538, 1048589, 0, 65538, 1048590, 0, 65538, 1048591, 0, 65538, 1048592, 0, 65538, 1048593, 0, 65538, 1048594, 0, 65538, 1048595, 0, 65539, 1114122, 0, 65537, 1114123, 0, 65538, 1114124, 0, 65538, 1114125, 0, 65538, 1114126, 0, 65538, 1114127, 0, 65538, 1114128, 0, 65538, 1114129, 0, 65538, 1114130, 0, 65538, 1114131, 0, 65539, 1179658, 0, 65537, 1179659, 0, 65538, 1179660, 0, 65538, 1179661, 0, 65538, 1179662, 0, 65538, 1179663, 0, 65538, 1179664, 0, 65538, 1179665, 0, 65538, 1179666, 0, 65538, 1179667, 0, 65539 )
+
+[node name="HazardTiles" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 8
+collision_mask = 0
+format = 1
+
+[node name="HazardMover" parent="." groups=["respawnable_objects"] instance=ExtResource( 8 )]
+position = Vector2( 0, 32 )
+
+[node name="TileMap" parent="HazardMover" index="0"]
+tile_data = PoolIntArray( 393228, 1610612737, 0, 393229, 1610612737, 0, 393230, 1610612737, 0, 393231, 1610612737, 0, 393232, 1610612737, 0, 458764, 1610612736, 0, 458765, 1610612736, 0, 458766, 1610612736, 0, 458767, 1610612736, 0, 458768, 1610612736, 0 )
+
+[node name="AnimationPlayer" parent="HazardMover" index="1"]
+anims/Move = SubResource( 2 )
+
+[node name="HazardMover2" parent="." groups=["respawnable_objects"] instance=ExtResource( 8 )]
+position = Vector2( 0, -56 )
+
+[node name="TileMap" parent="HazardMover2" index="0"]
+tile_data = PoolIntArray( 393228, 1610612737, 0, 393229, 1610612737, 0, 393230, 1610612737, 0, 393231, 1610612737, 0, 393232, 1610612737, 0, 458764, 1610612736, 0, 458765, 1610612736, 0, 458766, 1610612736, 0, 458767, 1610612736, 0, 458768, 1610612736, 0 )
+
+[node name="AnimationPlayer" parent="HazardMover2" index="1"]
+anims/Move = SubResource( 3 )
+anims/RESET = SubResource( 4 )
+
+[node name="HazardMover3" parent="." groups=["respawnable_objects"] instance=ExtResource( 8 )]
+position = Vector2( 0, -136 )
+
+[node name="TileMap" parent="HazardMover3" index="0"]
+tile_data = PoolIntArray( 393228, 1610612737, 0, 393229, 1610612737, 0, 393230, 1610612737, 0, 393231, 1610612737, 0, 393232, 1610612737, 0, 458764, 1610612736, 0, 458765, 1610612736, 0, 458766, 1610612736, 0, 458767, 1610612736, 0, 458768, 1610612736, 0 )
+
+[node name="AnimationPlayer" parent="HazardMover3" index="1"]
+anims/Move = SubResource( 5 )
+anims/RESET = SubResource( 6 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 80, 240 )
+offset = Vector2( 0, -20 )
+current = true
+limit_left = -16
+limit_top = -64
+limit_right = 288
+limit_bottom = 272
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+offset_v = 1.0
+editor_draw_limits = true
+editor_draw_drag_margin = true
+script = ExtResource( 4 )
+target = NodePath("../Player")
+
+[node name="RespawnPoint" type="Position2D" parent="."]
+position = Vector2( 248, 224 )
+
+[node name="Transition" type="Area2D" parent="."]
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition"]
+position = Vector2( 64, 312 )
+shape = SubResource( 1 )
+
+[connection signal="death" from="Player" to="." method="_on_Player_death"]
+[connection signal="body_entered" from="Transition" to="." method="_on_Transition_body_entered"]
+
+[editable path="HazardMover"]
+[editable path="HazardMover2"]
+[editable path="HazardMover3"]

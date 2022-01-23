@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://level/hazard_tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://object/HazardMover.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=2]
+resource_local_to_scene = true
+resource_name = "Move"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TileMap:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 88, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("TileMap:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[node name="HazardMover" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 8
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 393228, 1610612737, 0, 393229, 1610612737, 0, 393230, 1610612737, 0, 393231, 1610612737, 0, 393232, 1610612737, 0, 393233, 1610612737, 0, 458764, 1610612736, 0, 458765, 1610612736, 0, 458766, 1610612736, 0, 458767, 1610612736, 0, 458768, 1610612736, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Move = SubResource( 2 )
+anims/RESET = SubResource( 3 )
