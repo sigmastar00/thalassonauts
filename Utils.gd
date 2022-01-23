@@ -16,6 +16,14 @@ const PALLETE_5 := Color(0x997577ff)
 const PALLETE_6 := Color(0x816271ff)
 const PALLETE_7 := Color(0x4e495fff)
 
+# allegedly, preloading audio assets helps performance with HTML5 builds
+# Didn't seem to do much, but maybe made stutters slightly less severe?
+const AUDIO_BUBBLES = preload("res://audio/bubbles.wav")
+const AUDIO_DEATH = preload("res://audio/death.wav")
+const AUDIO_MUSIC = preload("res://audio/gwj41-glued.wav")
+const AUDIO_HOSE_CONNECT = preload("res://audio/hose_connect.wav")
+const AUDIO_POP = preload("res://audio/pop.wav")
+
 # == EXPORTED VARIABLES ==
 
 # == PUBLIC VARIABLES ==
