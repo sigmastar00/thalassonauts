@@ -35,10 +35,11 @@ func _ready()  -> void:
 	
 
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("ui_up"):
-		_label.get_v_scroll().value -= 1000 * delta
-	if Input.is_action_pressed("ui_down"):
-		_label.get_v_scroll().value += 1000 * delta
+	if visible:
+		if Input.is_action_pressed("ui_up"):
+			_label.get_v_scroll().value -= 1000 * delta
+		if Input.is_action_pressed("ui_down"):
+			_label.get_v_scroll().value += 1000 * delta
 
 
 # == PUBLIC METHODS ==

@@ -20,6 +20,10 @@ script = ExtResource( 1 )
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = 3.0
+margin_right = -3.0
+margin_bottom = -3.0
 custom_constants/margin_right = 10
 custom_constants/margin_top = 10
 custom_constants/margin_left = 10
@@ -31,15 +35,15 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 310.0
-margin_bottom = 170.0
+margin_right = 304.0
+margin_bottom = 164.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
-margin_right = 300.0
-margin_bottom = 141.0
+margin_right = 294.0
+margin_bottom = 135.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 bbcode_enabled = true
@@ -52,10 +56,10 @@ __meta__ = {
 }
 
 [node name="OkButton" type="Button" parent="MarginContainer/VBoxContainer"]
-margin_left = 141.0
-margin_top = 145.0
-margin_right = 159.0
-margin_bottom = 160.0
+margin_left = 138.0
+margin_top = 139.0
+margin_right = 156.0
+margin_bottom = 154.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 shortcut_in_tooltip = false
