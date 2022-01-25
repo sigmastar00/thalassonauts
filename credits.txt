@@ -1,3 +1,9 @@
+Testers (thanks!):
+    - Dawk
+    - Tossu
+    - Maxine
+
+
 This game uses the following third party software and assets:
 
 [b]Fonts[/b]
